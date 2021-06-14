@@ -1,0 +1,62 @@
+baseURL = 'https://soundvelocity.de/'
+defaultContentLanguage = 'de'
+enableEmoji = true
+languageCode = 'de-de'
+theme = 'pico'
+title = 'Soundseeker'
+description = "Projektbeschreibung und Tagebuch für das Soundseeker Projekt"
+
+[params]
+customCSS = [
+	"style/style.css",
+	"style/theme.sass",
+] # Path relative to assets folder
+customJS = ["js/console.js"] # Path relative to assets folder
+
+email = "mail@example.com"
+favicon = '/favicon.ico'
+# darkMode = 'always'
+
+#[[params.social]]
+#alt = "email icon"
+#icon = "/icons/email.svg"
+#name = "email"
+#url = "mailto:mail@example.com"
+
+
+[menu]
+[[menu.main]]
+identifier = "home" # identifier is use for translations
+pre = ""
+url = "/" 
+weight = 10 
+
+[[menu.main]]
+identifier = "about"
+pre = ""
+url = "/about/" 
+weight = 20 
+
+[[menu.main]]
+identifier = "logbook"
+pre = ""
+url = "#pages" 
+weight = 30 
+
+
+[markup.highlight]
+guessSyntax = true 
+lineNumbersInTable = true 
+noClasses = false
+tabWidth = 2 
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+
+
+[languages.de]
+contentDir = 'content/de'
+languageCode = 'de'
+languageName = 'Deutsch'
+weight = 0
