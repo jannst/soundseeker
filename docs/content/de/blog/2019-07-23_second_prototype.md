@@ -1,10 +1,26 @@
 +++
 title = "Der zweite Prototyp"
-subtitle = "Aufbau und Funktionsweise des zweiten Prototypes"
+subtitle = ""
 date = 2019-07-23
 
-description = ""
+description = "Aufbau und Funktionsweise des zweiten Prototypes"
 banner = ''
+[[pic]]
+  url = "/img/prototype_2/prototype_vertical.jpg"
+  label = "Gesamtansicht"
+  height = "250px"
+[[pic]]
+  url = "/img/prototype_2/prototype_backside.jpg"
+  label = "Rückseite der Platine"
+  height = "250px"
+[[pic]]
+  url = "/img/prototype_2/prototype_horizontal_use_case.jpg"
+  label = "Möglicher Anwendungsfall"
+  height = "250px"
+[[pic]]
+  url = "/img/prototype_2/prototype_waves_on_display.jpg"
+  label = "Anzeige der Rohdaten auf dem Display"
+  height = "250px"
 +++
 
 Der zweite Prototyp arbeitet mit dem selben Piezo-Wandlern, allerdings wurden die Schaltungen für 

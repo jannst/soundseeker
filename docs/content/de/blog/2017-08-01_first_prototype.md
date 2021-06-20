@@ -1,47 +1,28 @@
 +++
 title = "Der erste Prototyp"
-subtitle = "Kurze Beschreibung des ersten Prototypen mit Erläuterung der Arbeitsweise"
+subtitle = ""
 date = 2017-08-01
 
-description = ""
+description = "Kurze Beschreibung des ersten Prototypen mit Erläuterung der Arbeitsweise"
 banner = ''
 
 [[pic]]
-  url = "/img/prototype_2/prototype_vertical.jpg"
-  label = "Mehr Erfahren"
-  height = "350px"
+  url = "/img/prototype_1/prototype_1.jpg"
+  label = "Gesamtansicht"
+  height = "250px"
+
 [[pic]]
-  url = "/img/prototype_2/prototype_vertical.jpg"
-  label = "Mehr Erfahren"
-  height = "350px"
+  url = "/img/prototype_1/prototype_1_inside.jpg"
+  label = "Innenansicht"
+  height = "250px"
 [[pic]]
-  url = "/img/prototype_2/prototype_vertical.jpg"
-  label = "Mehr Erfahren"
-  height = "350px"
+  url = "/img/prototype_1/prototype_1_use_case.jpg"
+  label = "Messung der Schallgeschwindigkeit in Cello Deckenholz"
+  height = "250px"
 [[pic]]
-  url = "/img/prototype_2/prototype_vertical.jpg"
-  label = "Mehr Erfahren"
-  height = "350px"
-[[pic]]
-  url = "/img/prototype_2/prototype_vertical.jpg"
-  label = "Mehr Erfahren"
-  height = "350px"
-[[pic]]
-  url = "/img/prototype_2/prototype_vertical.jpg"
-  label = "Mehr Erfahren"
-  height = "350px"
-[[pic]]
-  url = "/img/prototype_2/prototype_vertical.jpg"
-  label = "Mehr Erfahren"
-  height = "350px"
-[[pic]]
-  url = "/img/prototype_2/prototype_vertical.jpg"
-  label = "Mehr Erfahren"
-  height = "350px"
-[[pic]]
-  url = "/img/prototype_2/prototype_vertical.jpg"
-  label = "Mehr Erfahren"
-  height = "350px"
+  url = "/img/prototype_1/prototype_1_horizontal.jpg"
+  label = "Gesamtansicht"
+  height = "250px"
 +++
 
 Der erste Prototyp ist ein Nachbau, des [Luccimeters](https://www.lucchimeter.com/), welches zur Zeit 
