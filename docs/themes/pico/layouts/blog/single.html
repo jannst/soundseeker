@@ -12,6 +12,16 @@
 <div class="text-justify leading-loose mb-12 text-lg">
 	{{ .Content }}
 </div>
+<div class="mx-auto mt-8 mb-8 md:mb-0 flex justify-space-between flex-wrap items-baseline">
+	{{ range .Params.pic }}
+	<a href="{{.url}}">
+	<div class="flex items-center flex-col m-2 shadow" style="width: {{.width | default "auto"}};">
+			<img src="{{.url}}" style="height:{{.height | default "auto"}}; width:{{.width | default "auto"}};"/>
+			<span class="text-center">{{.label}}</span>
+		</div>
+	</a>
+	{{ end }}
+</div>
 {{/* Previous / Next section */}}
 {{ if or (.PrevInSection) (.NextInSection) }}
 <hr class="mb-6 mt-24">
