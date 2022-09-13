@@ -1,4 +1,4 @@
-baseURL = 'https://soundvelocity.de/'
+baseURL = 'http://localhost:9001/'
 defaultContentLanguage = 'de'
 enableEmoji = true
 languageCode = 'de-de'
