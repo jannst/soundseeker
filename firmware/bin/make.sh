@@ -6,8 +6,7 @@ basedir="$(dirname $0)/.."
 
 set -e
 
-#cd "${basedir}/build"
-cd "${basedir}/cmake-build-debug"
+cd "${basedir}/build"
 
 make -j8
 

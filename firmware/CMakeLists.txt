@@ -7,7 +7,7 @@ pico_sdk_init()
 
 
 file(GLOB_RECURSE SOURCE_FILES src/*.c)
-add_executable(firmware_pico ${SOURCE_FILES} src/driver/port.h src/driver/raw/test.c)
+add_executable(firmware_pico ${SOURCE_FILES})
 
 #add_executable(firmware_pico
 #        src/main.c
