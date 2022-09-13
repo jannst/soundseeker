@@ -1,2 +1,4 @@
 ki_cad/soundseeker/soundseeker-backups
 ki_cad/**/#auto_saved_files#
+firmware/build
+firmware/cmake-build*
