@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "main.h": "c",
+        "stdlib.h": "c",
+        "sync_functions.h": "c",
+        "pwm.h": "c",
+        "irq.h": "c",
+        "time.h": "c",
+        "stdio.h": "c",
+        "stdbool.h": "c",
+        "stdint.h": "c"
+    }
+}
