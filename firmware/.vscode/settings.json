@@ -8,6 +8,8 @@
         "time.h": "c",
         "stdio.h": "c",
         "stdbool.h": "c",
-        "stdint.h": "c"
+        "stdint.h": "c",
+        "dma.h": "c",
+        "math.h": "c"
     }
 }

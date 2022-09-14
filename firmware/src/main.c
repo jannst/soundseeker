@@ -1,8 +1,11 @@
 #include "main.h"
 
-#define PWM_PIN 0
+
+#include "hardware/dma.h"
+#include "hardware/clocks.h"
 
 int main(void) {
+    set_sys_clock_khz(126000, true);
     stdio_init_all();
     //usb_thread_init();
     //nand_thread_init();
@@ -15,8 +18,10 @@ int main(void) {
     //usb_thread();
 
 
-
+    generate_sine_pwm(1.0);
     setup_pwm();
+    uint f_clk_sys = frequency_count_mhz(CLOCKS_FC0_SRC_VALUE_CLK_SYS);
+    printf("clk_sys  = %dMHz\n", f_clk_sys);
     printf("Pwm init done :)\n");
     while (1)
         tight_loop_contents();

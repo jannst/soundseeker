@@ -24,7 +24,11 @@ add_executable(firmware_pico ${SOURCE_FILES})
 #pico_enable_stdio_usb(firmware_pico 1)
 pico_enable_stdio_uart(firmware_pico 1)
 pico_add_extra_outputs(firmware_pico)
-target_link_libraries(firmware_pico PRIVATE pico_stdlib hardware_pwm)
+target_link_libraries(firmware_pico PRIVATE 
+    pico_stdlib 
+    hardware_pwm
+    hardware_dma
+    )
 
 # used like this in nand programmer
 #target_link_libraries(firmware_pico PRIVATE pico_stdlib tinyusb_device tinyusb_board hardware_pio hardware_sync pico_multicore)
