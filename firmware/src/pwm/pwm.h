@@ -13,6 +13,7 @@
 
 #define sine_pwm_uint uint16_t
 #define pwm_num_samples 40
+
 sine_pwm_uint sine_pwm_lut[pwm_num_samples];
 
 void generate_sine_pwm(double amplitude);

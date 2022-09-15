@@ -18,7 +18,7 @@ int main(void) {
     //usb_thread();
 
 
-    generate_sine_pwm(1.0);
+    generate_sine_pwm(.5);
     setup_pwm();
     uint f_clk_sys = frequency_count_mhz(CLOCKS_FC0_SRC_VALUE_CLK_SYS);
     printf("clk_sys  = %dMHz\n", f_clk_sys);
