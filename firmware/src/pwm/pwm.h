@@ -12,12 +12,11 @@
 #define PWM_OUT 2
 
 #define sine_pwm_uint uint16_t
-#define pwm_num_samples 40
+#define pwm_buf_size 256
 
-sine_pwm_uint sine_pwm_lut[pwm_num_samples];
+sine_pwm_uint sine_pwm_lut[pwm_buf_size];
 
-void generate_sine_pwm(double amplitude);
-void on_pwm_wrap();
-int setup_pwm();
+bool play_frequency(double amplitude, double frequency);
+int init_pwm();
 
 #endif
