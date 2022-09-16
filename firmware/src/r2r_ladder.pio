@@ -7,8 +7,9 @@
 ;reset:
 ;    mov y, x            ; y will serve as our counter
 ;loop:
-    pull
+    ;pull
     out pins, 6         ; output 6 bits to the R2R-ladder 
+    ;nop [20]
 ;    jmp y-- loop
 ;    nop [1]
 ;    out pins, 6         ; output 6 bits to the R2R-ladder 
@@ -25,24 +26,27 @@
 .wrap
 
 % c-sdk {
-static inline void r2r_ladder_program_init(PIO pio, uint sm, uint offset, uint pin, uint num_pins) {
+static inline void r2r_ladder_program_init(PIO pio, uint sm, uint offset, uint pin_base, uint pin_count, uint num_samples, float freq) {
     pio_sm_config c = r2r_ladder_program_get_default_config(offset);
 
     // Set the pin direction to output at the PIO
-    pio_sm_set_consecutive_pindirs(pio, sm, pin, num_pins, true);
+    pio_sm_set_consecutive_pindirs(pio, sm, pin_base, pin_count, true);
 
     // Map the state machine's OUT pin group to one pin, namely the `pin`
     // parameter to this function.
-    sm_config_set_out_pins(&c, pin, num_pins);
-    sm_config_set_out_shift(&c, false, false, 32);
+    sm_config_set_out_pins(&c, pin_base, pin_count);
+    sm_config_set_out_shift(&c, true, true, 6);
     sm_config_set_fifo_join(&c, PIO_FIFO_JOIN_TX);
 
 
 
-    for(uint8_t i = 0; i < num_pins; i++) {
+    for(uint8_t i = 0; i < pin_count; i++) {
         // Set this pin's GPIO function (connect PIO to the pad)
-        pio_gpio_init(pio, pin + i);
+        pio_gpio_init(pio, pin_base + i);
     }
+
+    float div = clock_get_hz(clk_sys) / num_samples / freq;
+    sm_config_set_clkdiv(&c, div);
 
     //c.shiftctrl =
     //    (1u << PIO_SM0_SHIFTCTRL_FJOIN_TX_LSB) |        // make TX FIFO twice as big

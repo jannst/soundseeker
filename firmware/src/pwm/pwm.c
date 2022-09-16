@@ -26,52 +26,20 @@
 #define pwm_resolution 64
 #define effective_pwm_resolution 62
 uint16_t pwm_num_samples;
-#define num_samples_in_dword 5 // We have a 6 bit DAC. So we can put 5 samples a 6 bits into a 32 bit dword
 bool generate_sine_pwm(double amplitude, uint16_t pwm_num_samples)
 {
-    // roud up to the next integer if result is not an integer
-    uint16_t num_dwords = (pwm_num_samples + (num_samples_in_dword - 1)) / num_samples_in_dword;
-    if (num_dwords >= pwm_buf_size)
+    if (pwm_num_samples >= pwm_buf_size)
     {
-        printf("ERROR: Could not generate pwm lookup table. number of dwords %d bigger than buffer %d", pwm_num_samples, pwm_buf_size);
+        printf("ERROR: Could not generate pwm lookup table. number of samples %d bigger than buffer %d", pwm_num_samples, pwm_buf_size);
         return false;
     }
 
-    for (uint16_t i = 0; i < num_dwords; i++)
+    for (uint16_t i = 0; i < pwm_num_samples; i++)
     {
-        uint32_t word = 0;
-        for (uint8_t j = 0; j < min(num_samples_in_dword, (pwm_num_samples - i * num_samples_in_dword)); j++)
-        {
-            uint8_t val = (uint8_t)(sin(2 * (i * num_samples_in_dword + j) * M_PI / pwm_num_samples) * amplitude * (effective_pwm_resolution / 2) + (pwm_resolution / 2));
-            printf("val: %d\n", val);
-            if (j > 0)
-            {
-                word = word << 6u;
-            }
-            // fill the last 6 bits of the word with our sample
-            word = word | (val & 0b00111111);
-        }
-        // shift 2 to the right to have the values starting from the MSB
-        // we will shift the out of the OSR in PIO from the left side
-        sine_pwm_lut[i] = word << 2;
+        sine_pwm_lut[i] = (sine_pwm_uint)(sin(2 * i * M_PI / pwm_num_samples) * amplitude * (effective_pwm_resolution / 2) + (pwm_resolution / 2) - 1);
+        printf("%d: %d\n", i, sine_pwm_lut[i]);
     }
     return true;
-}
-
-void print_lut(uint16_t pwm_num_samples)
-{
-    uint16_t num_dwords = (pwm_num_samples + (num_samples_in_dword - 1)) / num_samples_in_dword;
-    for (uint16_t i = 0; i < num_dwords; i++)
-    {
-        uint32_t word = sine_pwm_lut[i];
-        uint8_t upper_edge = min(num_samples_in_dword, (pwm_num_samples - i * num_samples_in_dword));
-        for (uint8_t j = 0; j < upper_edge; j++)
-        {
-            uint8_t num_shifts = max(0, (upper_edge-j-1)*6);
-            uint8_t val = (word >> num_shifts) & 0b00111111;
-            printf("val: %d\n", val);
-        }
-    }
 }
 
 int dma_channel;
