@@ -14,7 +14,7 @@ add_executable(firmware_pico ${SOURCE_FILES})
 #        src/main.c
 #        )
 
-pico_generate_pio_header(firmware_pico ${CMAKE_CURRENT_LIST_DIR}/src/r2r_ladder.pio)
+pico_generate_pio_header(firmware_pico ${CMAKE_CURRENT_LIST_DIR}/src/signal_generator/r2r_ladder.pio)
 
 
 # Make sure TinyUSB can find tusb_config.h
@@ -26,7 +26,6 @@ pico_enable_stdio_uart(firmware_pico 1)
 pico_add_extra_outputs(firmware_pico)
 target_link_libraries(firmware_pico PRIVATE 
     pico_stdlib 
-    hardware_pwm
     hardware_dma
     hardware_pio
     )
