@@ -1,5 +1,13 @@
 #include "pwm.h"
 
+#ifndef min
+#define min(a, b) (((a) < (b)) ? (a) : (b))
+#endif
+
+
+#ifndef max
+#define max(a,b)            (((a) > (b)) ? (a) : (b))
+#endif
 
 /**
  * Check out this appnote on creating pwm audio:
@@ -13,29 +21,62 @@
  *  https://www.renesas.com/kr/en/document/apn/pwm-sine-wave-generation-sinewave?language=en
  * \param amplitude range from 0.0 to 1.0
  **/
-#define pwm_resolution 41
+
+// actually 64 but only 62 to have 2 buffer
+#define pwm_resolution 64
+#define effective_pwm_resolution 62
 uint16_t pwm_num_samples;
-bool generate_sine_pwm(double amplitude, double frequency)
+#define num_samples_in_dword 5 // We have a 6 bit DAC. So we can put 5 samples a 6 bits into a 32 bit dword
+bool generate_sine_pwm(double amplitude, uint16_t pwm_num_samples)
 {
-    double num_samples = 3000000 / frequency;
-    pwm_num_samples = (uint16_t)num_samples;
-    if (pwm_num_samples >= pwm_buf_size)
+    // roud up to the next integer if result is not an integer
+    uint16_t num_dwords = (pwm_num_samples + (num_samples_in_dword - 1)) / num_samples_in_dword;
+    if (num_dwords >= pwm_buf_size)
     {
-        printf("ERROR: Could not generate pwm lookup table. number of samples %d bigger than buffer %d", num_samples, pwm_buf_size);
+        printf("ERROR: Could not generate pwm lookup table. number of dwords %d bigger than buffer %d", pwm_num_samples, pwm_buf_size);
         return false;
     }
 
-    for (uint16_t i = 0; i < pwm_num_samples; i++)
+    for (uint16_t i = 0; i < num_dwords; i++)
     {
-        sine_pwm_lut[i] = (sine_pwm_uint)(sin(2 * i * M_PI / num_samples) * amplitude * (pwm_resolution / 2) + (pwm_resolution / 2) - 1);
-        printf("%d: %d\n", i, sine_pwm_lut[i]);
+        uint32_t word = 0;
+        for (uint8_t j = 0; j < min(num_samples_in_dword, (pwm_num_samples - i * num_samples_in_dword)); j++)
+        {
+            uint8_t val = (uint8_t)(sin(2 * (i * num_samples_in_dword + j) * M_PI / pwm_num_samples) * amplitude * (effective_pwm_resolution / 2) + (pwm_resolution / 2));
+            printf("val: %d\n", val);
+            if (j > 0)
+            {
+                word = word << 6u;
+            }
+            // fill the last 6 bits of the word with our sample
+            word = word | (val & 0b00111111);
+        }
+        // shift 2 to the right to have the values starting from the MSB
+        // we will shift the out of the OSR in PIO from the left side
+        sine_pwm_lut[i] = word << 2;
     }
     return true;
 }
 
+void print_lut(uint16_t pwm_num_samples)
+{
+    uint16_t num_dwords = (pwm_num_samples + (num_samples_in_dword - 1)) / num_samples_in_dword;
+    for (uint16_t i = 0; i < num_dwords; i++)
+    {
+        uint32_t word = sine_pwm_lut[i];
+        uint8_t upper_edge = min(num_samples_in_dword, (pwm_num_samples - i * num_samples_in_dword));
+        for (uint8_t j = 0; j < upper_edge; j++)
+        {
+            uint8_t num_shifts = max(0, (upper_edge-j-1)*6);
+            uint8_t val = (word >> num_shifts) & 0b00111111;
+            printf("val: %d\n", val);
+        }
+    }
+}
+
 int dma_channel;
 
-void dma_handler()
+void dma_handlerx()
 {
     // Clear the interrupt request.
     dma_hw->ints0 = 1u << dma_channel;
@@ -55,7 +96,7 @@ int init_pwm()
     // tell pwm counter to count up to 'pwm_resolution'
     pwm_config_set_wrap(&pwm_config, pwm_resolution);
     pwm_init(pwm_slice_num, &pwm_config, true);
-    //pwm_set_chan_level(pwm_slice_num, pwm_channel, pwm_resolution/2);
+    // pwm_set_chan_level(pwm_slice_num, pwm_channel, pwm_resolution/2);
 }
 
 void configure_dma()
@@ -89,35 +130,38 @@ void configure_dma()
     );
 
     dma_channel_set_irq0_enabled(dma_channel, true);
-    irq_set_exclusive_handler(DMA_IRQ_0, dma_handler);
+    irq_set_exclusive_handler(DMA_IRQ_0, dma_handlerx);
     irq_set_enabled(DMA_IRQ_0, true);
 }
 
-bool play_frequency(double amplitude, double frequency) {
-    if(dma_channel && dma_channel_is_busy(dma_channel)) {
-        //dma_channel_set_irq0_enabled(dma_channel, false);
-        //sleep_ms(1);
-        //dma_channel_abort(dma_channel);
+bool play_frequency(double amplitude, double frequency)
+{
+    if (dma_channel && dma_channel_is_busy(dma_channel))
+    {
+        // dma_channel_set_irq0_enabled(dma_channel, false);
+        // sleep_ms(1);
+        // dma_channel_abort(dma_channel);
 
-        //init_pwm();
+        // init_pwm();
         dma_channel_set_irq0_enabled(dma_channel, true);
-        irq_set_exclusive_handler(DMA_IRQ_0, dma_handler);
+        irq_set_exclusive_handler(DMA_IRQ_0, dma_handlerx);
         irq_set_enabled(DMA_IRQ_0, true);
         sleep_ms(1);
-        //irq_set_exclusive_handler(DMA_IRQ_0, dma_handler);
-        //irq_set_enabled(DMA_IRQ_0, true);
-        //dma_hw->ints0 = 1u << dma_channel;
+        // irq_set_exclusive_handler(DMA_IRQ_0, dma_handler);
+        // irq_set_enabled(DMA_IRQ_0, true);
+        // dma_hw->ints0 = 1u << dma_channel;
         dma_channel_start(dma_channel);
-        dma_handler();
-    } else {
-
-
-
-    if(!generate_sine_pwm(amplitude,frequency)) {
-        return false;
+        dma_handlerx();
     }
-    configure_dma();
-    dma_handler();    
+    else
+    {
+
+        if (!generate_sine_pwm(amplitude, frequency))
+        {
+            return false;
+        }
+        configure_dma();
+        dma_handlerx();
     }
     return true;
 }

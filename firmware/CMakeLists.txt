@@ -14,7 +14,7 @@ add_executable(firmware_pico ${SOURCE_FILES})
 #        src/main.c
 #        )
 
-#pico_generate_pio_header(firmware_pico ${CMAKE_CURRENT_LIST_DIR}/src/parallel_nand.pio)
+pico_generate_pio_header(firmware_pico ${CMAKE_CURRENT_LIST_DIR}/src/r2r_ladder.pio)
 
 
 # Make sure TinyUSB can find tusb_config.h
@@ -28,6 +28,7 @@ target_link_libraries(firmware_pico PRIVATE
     pico_stdlib 
     hardware_pwm
     hardware_dma
+    hardware_pio
     )
 
 # used like this in nand programmer
