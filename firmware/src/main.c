@@ -36,12 +36,49 @@ void signal_amplitude_ocillator_demo()
   }
 }
 
+void signal_freq_ocillator_demo()
+{
+  bool up = true;
+  float freq = 30000;
+  while (true)
+  {
+    sleep_ms(50);
+    sine_play(.2, freq);
+
+    if (up)
+    {
+      if (freq >= 50000)
+      {
+        freq = 50000;
+        up = false;
+      }
+      else
+      {
+        freq += 1000;
+      }
+    }
+    else
+    {
+      if (freq <= 1000)
+      {
+        freq = 1000;
+        up = true;
+      }
+      else
+      {
+        freq -= 1000;
+      }
+    }
+  }
+}
+
 int main(void)
 {
   stdio_init_all();
   sine_generator_init();
 
-  signal_amplitude_ocillator_demo();
+  signal_freq_ocillator_demo();
+  //signal_amplitude_ocillator_demo();
 
   while (1)
     tight_loop_contents();
