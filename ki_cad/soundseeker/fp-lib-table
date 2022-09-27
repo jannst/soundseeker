@@ -1,3 +1,4 @@
 (fp_lib_table
   (lib (name "soundseeker_footprints")(type "KiCad")(uri "${KIPRJMOD}/soundseeker_footprints.pretty")(options "")(descr ""))
+  (lib (name "MCU_RaspberryPi_and_Boards")(type "KiCad")(uri "/home/metro/git/soundseeker/ki_cad/KiCad-RP-Pico/RP-Pico Libraries/MCU_RaspberryPi_and_Boards.pretty")(options "")(descr ""))
 )

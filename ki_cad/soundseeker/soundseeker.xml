@@ -1,0 +1,1046 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/home/metro/git/soundseeker/ki_cad/soundseeker/soundseeker.kicad_sch</source>
+    <date>Sa 17 Sep 2022 15:48:06 CEST</date>
+    <tool>Eeschema 6.0.7-f9a2dced07~116~ubuntu20.04.1</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>Soundseeker</title>
+        <company/>
+        <rev>0.1</rev>
+        <date>2022-09-11</date>
+        <source>soundseeker.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="2" name="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date>2022-09-17</date>
+        <source>high_voltage_power_supply.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="3" name="/Piezo Driver/" tstamps="/1bfe4f8a-cf98-4698-9bc5-3485aa179f00/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>piezo_driver.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C1">
+      <value>10u</value>
+      <footprint>Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">Tantal 10V 10%</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Description" value="Tantal 10V 10%"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>b489661e-0bc5-4817-a41b-91e8c9efae77</tstamps>
+    </comp>
+    <comp ref="C2">
+      <value>10u</value>
+      <footprint>Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">Tantal 10V 10%</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Description" value="Tantal 10V 10%"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>cbd4aa99-d6dd-4397-8005-b7b0f7e1b128</tstamps>
+    </comp>
+    <comp ref="C3">
+      <value>1u</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">16V X7R 10%</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Description" value="16V X7R 10%"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>8dd8dff8-874d-4f26-9457-92ff489869eb</tstamps>
+    </comp>
+    <comp ref="C4">
+      <value>10u</value>
+      <footprint>Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">Tantal 10V 10%</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Description" value="Tantal 10V 10%"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>2c9436ae-c672-499d-aeef-339d263c7a7c</tstamps>
+    </comp>
+    <comp ref="C5">
+      <value>1n</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">10% 50V</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Description" value="10% 50V"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>3fbbd169-fbd9-4385-8ac2-1b380fd14806</tstamps>
+    </comp>
+    <comp ref="C6">
+      <value>1u</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">10% 100V X7R</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Description" value="10% 100V X7R"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>efad08c9-7031-4522-a9ea-76056a2013f8</tstamps>
+    </comp>
+    <comp ref="C7">
+      <value>10n</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">10% 50V X7R</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Description" value="10% 50V X7R"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>897b4ef4-e244-4dc8-8871-c0e4683bb51e</tstamps>
+    </comp>
+    <comp ref="C8">
+      <value>22u</value>
+      <footprint>Capacitor_SMD:CP_Elec_8x10.5</footprint>
+      <datasheet>https://www.mouser.de/datasheet/2/40/kyocera_avx_aea_series-2526131.pdf</datasheet>
+      <fields>
+        <field name="Description">100V </field>
+        <field name="Type">AEA0810220M100R </field>
+      </fields>
+      <libsource lib="Device" part="C_Polarized" description="Polarized capacitor"/>
+      <property name="Type" value="AEA0810220M100R "/>
+      <property name="Description" value="100V "/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>f11bd6f0-c7e5-43fd-b4a6-01a6f5f952e3</tstamps>
+    </comp>
+    <comp ref="C9">
+      <value>22u</value>
+      <footprint>Capacitor_SMD:CP_Elec_8x10.5</footprint>
+      <datasheet>https://www.mouser.de/datasheet/2/40/kyocera_avx_aea_series-2526131.pdf</datasheet>
+      <fields>
+        <field name="Description">100V </field>
+        <field name="Type">AEA0810220M100R </field>
+      </fields>
+      <libsource lib="Device" part="C_Polarized" description="Polarized capacitor"/>
+      <property name="Type" value="AEA0810220M100R "/>
+      <property name="Description" value="100V "/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>50dc2300-1d19-4ee6-9a67-58c9f9d7a558</tstamps>
+    </comp>
+    <comp ref="C10">
+      <value>470p</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">5% 100V C0G</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Description" value="5% 100V C0G"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>e69a79f4-4a75-4d9b-96cb-e0fae3e2ffa8</tstamps>
+    </comp>
+    <comp ref="C11">
+      <value>22u</value>
+      <footprint>Capacitor_SMD:CP_Elec_8x10.5</footprint>
+      <datasheet>https://www.mouser.de/datasheet/2/40/kyocera_avx_aea_series-2526131.pdf</datasheet>
+      <fields>
+        <field name="Description">100V </field>
+        <field name="Type">AEA0810220M100R </field>
+      </fields>
+      <libsource lib="Device" part="C_Polarized" description="Polarized capacitor"/>
+      <property name="Type" value="AEA0810220M100R "/>
+      <property name="Description" value="100V "/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>046aad51-7ed0-495e-a19f-6407b14bf8c6</tstamps>
+    </comp>
+    <comp ref="C12">
+      <value>10n</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">10% 50V X7R</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Description" value="10% 50V X7R"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>21397b22-ead5-4ac8-83db-a9897a41b5fd</tstamps>
+    </comp>
+    <comp ref="C13">
+      <value>15p</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">5% 50V</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Description" value="5% 50V"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>a9d3f946-6eb4-4355-a689-7b1bd0e0f29e</tstamps>
+    </comp>
+    <comp ref="C14">
+      <value>1u</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">10% 100V X7R</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Description" value="10% 100V X7R"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>e7d6e5c8-c7b7-400d-9471-a86ddefab49b</tstamps>
+    </comp>
+    <comp ref="C15">
+      <value>1u</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">10% 100V X7R</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Description" value="10% 100V X7R"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>10c9ae25-798f-4284-9b8c-2ea677025736</tstamps>
+    </comp>
+    <comp ref="C16">
+      <value>1u</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">16V X7R 10%</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Description" value="16V X7R 10%"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>764466d5-08a3-4c82-983e-2be2a3a288b2</tstamps>
+    </comp>
+    <comp ref="D1">
+      <value>RB058L150DDTE25</value>
+      <footprint>Diode_SMD:D_SOD-128</footprint>
+      <datasheet>https://fscdn.rohm.com/en/products/databook/datasheet/discrete/diode/schottky_barrier/rb058l150ddte25-e.pdf</datasheet>
+      <libsource lib="Device" part="D_Schottky" description="Schottky diode"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>4be37c7d-08d1-43fe-b2f6-f22604723344</tstamps>
+    </comp>
+    <comp ref="J1">
+      <value>Conn_01x11</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x11_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector_Generic" part="Conn_01x11" description="Generic connector, single row, 01x11, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>a5627892-c043-4d4b-b213-9fc85e215823</tstamps>
+    </comp>
+    <comp ref="L1">
+      <value>2.2u</value>
+      <footprint>Inductor_SMD:L_Vishay_IFSC-1515AH_4x4x1.8mm</footprint>
+      <datasheet>https://www.mouser.de/datasheet/2/427/sc15ah01-1762292.pdf</datasheet>
+      <fields>
+        <field name="Type">IFSC1515AHER2R2M01 </field>
+      </fields>
+      <libsource lib="Device" part="L" description="Inductor"/>
+      <property name="Type" value="IFSC1515AHER2R2M01 "/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>f41bb5c4-0c37-423e-859b-c82846cbb25f</tstamps>
+    </comp>
+    <comp ref="Q1">
+      <value>FDT86113LZ</value>
+      <footprint>Package_TO_SOT_SMD:SOT-223-3_TabPin2</footprint>
+      <datasheet>https://www.mouser.de/datasheet/2/308/1/FDT86113LZ_D-1809132.pdf</datasheet>
+      <libsource lib="soundseeker" part="FDT86113LZ" description="N-MOSFET transistor, gate/drain/source"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>a0f6451e-edc6-4180-a806-ddf0b997be28</tstamps>
+    </comp>
+    <comp ref="R1">
+      <value>2k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">250mW 1%</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Description" value="250mW 1%"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>75c53e24-e941-47da-bcc0-7292175f15ed</tstamps>
+    </comp>
+    <comp ref="R2">
+      <value>2k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">250mW 1%</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Description" value="250mW 1%"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>f9a80ca1-6904-46ce-b8c3-ac82bfd52d81</tstamps>
+    </comp>
+    <comp ref="R3">
+      <value>1k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">250mW 1% </field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Description" value="250mW 1% "/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>c6a49920-0e8d-4acc-b763-e6da910de90f</tstamps>
+    </comp>
+    <comp ref="R4">
+      <value>2k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">250mW 1%</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Description" value="250mW 1%"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>38d36203-6cde-4a21-b9f2-2ec2ab6d2654</tstamps>
+    </comp>
+    <comp ref="R5">
+      <value>1k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">250mW 1% </field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Description" value="250mW 1% "/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>8fcf0f32-0c0b-4aa0-8c0a-33744b1b7234</tstamps>
+    </comp>
+    <comp ref="R6">
+      <value>2k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">250mW 1%</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Description" value="250mW 1%"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>332866a3-212c-4673-80f0-67305e20edeb</tstamps>
+    </comp>
+    <comp ref="R7">
+      <value>1k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">250mW 1% </field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Description" value="250mW 1% "/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>959428a5-2d0c-43f0-954b-541a84643e82</tstamps>
+    </comp>
+    <comp ref="R8">
+      <value>2k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">250mW 1%</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Description" value="250mW 1%"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>644518eb-b9cd-4be2-90d5-bc5d7d6cec93</tstamps>
+    </comp>
+    <comp ref="R9">
+      <value>1k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">250mW 1% </field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Description" value="250mW 1% "/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>42708151-2c03-4b4a-8c0f-962e1a47815d</tstamps>
+    </comp>
+    <comp ref="R10">
+      <value>2k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">250mW 1%</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Description" value="250mW 1%"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>dfe21538-4208-44f7-b996-51cf54a3cb7d</tstamps>
+    </comp>
+    <comp ref="R11">
+      <value>1k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">250mW 1% </field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Description" value="250mW 1% "/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>eeacc6a3-9f7a-46ec-b06a-26f3c6739584</tstamps>
+    </comp>
+    <comp ref="R12">
+      <value>2k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">250mW 1%</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Description" value="250mW 1%"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>6ea62942-3c7e-425e-802a-3f121890a3fb</tstamps>
+    </comp>
+    <comp ref="R13">
+      <value>20k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">250mW 1%</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Description" value="250mW 1%"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>c40d990f-20a8-4edc-bc34-f7dc25474962</tstamps>
+    </comp>
+    <comp ref="R14">
+      <value>20k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">250mW 1%</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Description" value="250mW 1%"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>2176c3ac-1cbb-483f-83a9-56dadd9ee556</tstamps>
+    </comp>
+    <comp ref="R15">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">250mW 1%</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Description" value="250mW 1%"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>923bfdf3-cf66-4c61-97de-d56e4131d689</tstamps>
+    </comp>
+    <comp ref="R16">
+      <value>1.69k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">125mW 1%</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Description" value="125mW 1%"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>d31994b1-4249-47d5-8f96-ecca6930590e</tstamps>
+    </comp>
+    <comp ref="R17">
+      <value>100</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">250mW 1% </field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Description" value="250mW 1% "/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>3d8f190a-8ff4-4773-b929-83cfe7113754</tstamps>
+    </comp>
+    <comp ref="R18">
+      <value>1k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">250mW 1%</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Description" value="250mW 1%"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>27bd29c8-eb01-4831-884f-03eadfc9872e</tstamps>
+    </comp>
+    <comp ref="R19">
+      <value>2.2k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">250mW 1%</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Description" value="250mW 1%"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>c412d70b-1f84-41d3-b954-42fa5520c5d6</tstamps>
+    </comp>
+    <comp ref="R20">
+      <value>2.2k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">250mW 1%</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Description" value="250mW 1%"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>7dfe31e6-2dc3-4b93-8222-2360d2076a80</tstamps>
+    </comp>
+    <comp ref="R21">
+      <value>47k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">250mW 1%</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Description" value="250mW 1%"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>004d2c1e-279a-4edb-bd0f-7c0fcb4496e8</tstamps>
+    </comp>
+    <comp ref="R22">
+      <value>20k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">250mW 1%</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Description" value="250mW 1%"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>a9ec7d72-d4c6-4f3d-b07a-1abe05fe2684</tstamps>
+    </comp>
+    <comp ref="R23">
+      <value>20k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Description">250mW 1%</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Description" value="250mW 1%"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>b2959369-1c4b-44dd-86e2-6ba532cd7d0e</tstamps>
+    </comp>
+    <comp ref="U1">
+      <value>MCP1652</value>
+      <footprint>Package_SO:MSOP-8_3x3mm_P0.65mm</footprint>
+      <datasheet>http://ww1.microchip.com/downloads/en/DeviceDoc/21876B.pdf</datasheet>
+      <libsource lib="Regulator_Switching" part="MCP1652" description="750 kHz Boost Controller, 3.3-100V output voltage, 5W, Power Good Detection, MSOP-8"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>7cb531fa-5372-4e94-b0a8-cfff3cc93f70</tstamps>
+    </comp>
+    <comp ref="U2">
+      <value>TLV9052S</value>
+      <footprint>Package_SO:MSOP-10_3x3mm_P0.5mm</footprint>
+      <datasheet>https://www.ti.com/lit/ds/symlink/tlv9052.pdf</datasheet>
+      <libsource lib="soundseeker" part="TLV9052S" description="5-MHz, 15-V/μs High Slew-Rate, RRIO Op Amp, VSSOP-10"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>a5de0a0e-ae24-4b53-8230-6ef85203898b 6f972932-a1c9-428d-9359-f2b5ccdff800</tstamps>
+    </comp>
+    <comp ref="U3">
+      <value>OPA453</value>
+      <footprint>Package_TO_SOT_SMD:TO-263-7_TabPin4</footprint>
+      <datasheet>https://www.ti.com/lit/ds/symlink/opa453.pdf</datasheet>
+      <libsource lib="soundseeker" part="OPA453" description="80V, 50mA OPERATIONAL AMPLIFIER, TO-263"/>
+      <property name="Sheetname" value="High Voltage Power Supply"/>
+      <property name="Sheetfile" value="high_voltage_power_supply.kicad_sch"/>
+      <sheetpath names="/High Voltage Power Supply/" tstamps="/8537c208-75f7-4695-82af-6257959daf1d/"/>
+      <tstamps>b3096a8c-0b3a-43b2-a8a4-dee9c2764574</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Connector_Generic" part="Conn_01x11">
+      <description>Generic connector, single row, 01x11, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x11</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+        <pin num="6" name="Pin_6" type="passive"/>
+        <pin num="7" name="Pin_7" type="passive"/>
+        <pin num="8" name="Pin_8" type="passive"/>
+        <pin num="9" name="Pin_9" type="passive"/>
+        <pin num="10" name="Pin_10" type="passive"/>
+        <pin num="11" name="Pin_11" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C">
+      <description>Unpolarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C_Polarized">
+      <description>Polarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>CP_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_Polarized</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="D_Schottky">
+      <description>Schottky diode</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>TO-???*</fp>
+        <fp>*_Diode_*</fp>
+        <fp>*SingleDiode*</fp>
+        <fp>D_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">D_Schottky</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="L">
+      <description>Inductor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Choke_*</fp>
+        <fp>*Coil*</fp>
+        <fp>Inductor_*</fp>
+        <fp>L_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">L</field>
+        <field name="Value">L</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R">
+      <description>Resistor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Regulator_Switching" part="MCP1652">
+      <description>750 kHz Boost Controller, 3.3-100V output voltage, 5W, Power Good Detection, MSOP-8</description>
+      <docs>http://ww1.microchip.com/downloads/en/DeviceDoc/21876B.pdf</docs>
+      <footprints>
+        <fp>MSOP*3x3mm*P0.65mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">MCP1652</field>
+        <field name="Footprint">Package_SO:MSOP-8_3x3mm_P0.65mm</field>
+        <field name="Datasheet">http://ww1.microchip.com/downloads/en/DeviceDoc/21876B.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="EXT" type="open_emitter"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="CS" type="input"/>
+        <pin num="4" name="FB" type="input"/>
+        <pin num="5" name="~{SHDN}" type="input"/>
+        <pin num="6" name="NC" type="no_connect"/>
+        <pin num="7" name="PG" type="output"/>
+        <pin num="8" name="Vin" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="soundseeker" part="FDT86113LZ">
+      <description>N-MOSFET transistor, gate/drain/source</description>
+      <docs>https://www.mouser.de/datasheet/2/308/1/FDT86113LZ_D-1809132.pdf</docs>
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">FDT86113LZ</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-223-3_TabPin2</field>
+        <field name="Datasheet">https://www.mouser.de/datasheet/2/308/1/FDT86113LZ_D-1809132.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="G" type="input"/>
+        <pin num="2" name="D" type="passive"/>
+        <pin num="3" name="S" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="soundseeker" part="OPA453">
+      <description>80V, 50mA OPERATIONAL AMPLIFIER, TO-263</description>
+      <docs>https://www.ti.com/lit/ds/symlink/opa453.pdf</docs>
+      <footprints>
+        <fp>DIP*W7.62mm*</fp>
+        <fp>SOIC*3.9x4.9mm*P1.27mm*</fp>
+        <fp>TO*99*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">OPA453</field>
+        <field name="Footprint">Package_TO_SOT_SMD:TO-263-7_TabPin4</field>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/opa453.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="+" type="input"/>
+        <pin num="2" name="-" type="input"/>
+        <pin num="4" name="V-" type="power_in"/>
+        <pin num="5" name="V+" type="power_in"/>
+        <pin num="6" name="" type="output"/>
+        <pin num="7" name="Flag" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="soundseeker" part="TLV9052S">
+      <description>5-MHz, 15-V/μs High Slew-Rate, RRIO Op Amp, VSSOP-10</description>
+      <docs>https://www.ti.com/lit/ds/symlink/tlv9052.pdf</docs>
+      <footprints>
+        <fp>Texas*PVSON*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TLV9052S</field>
+        <field name="Footprint">Package_SO:MSOP-10_3x3mm_P0.5mm</field>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/tlv9052.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="output"/>
+        <pin num="2" name="-" type="input"/>
+        <pin num="3" name="+" type="input"/>
+        <pin num="4" name="V-" type="power_in"/>
+        <pin num="5" name="SHDN" type="input"/>
+        <pin num="6" name="SHDN" type="input"/>
+        <pin num="7" name="+" type="input"/>
+        <pin num="8" name="-" type="input"/>
+        <pin num="9" name="" type="output"/>
+        <pin num="10" name="V+" type="power_in"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Connector_Generic">
+      <uri>/usr/share/kicad/symbols//Connector_Generic.kicad_sym</uri>
+    </library>
+    <library logical="Device">
+      <uri>/usr/share/kicad/symbols//Device.kicad_sym</uri>
+    </library>
+    <library logical="Regulator_Switching">
+      <uri>/usr/share/kicad/symbols//Regulator_Switching.kicad_sym</uri>
+    </library>
+    <library logical="soundseeker">
+      <uri>/home/metro/git/soundseeker/ki_cad/soundseeker/soundseeker.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+5V">
+      <node ref="C1" pin="1" pintype="passive"/>
+      <node ref="C16" pin="1" pintype="passive"/>
+      <node ref="C2" pin="1" pintype="passive"/>
+      <node ref="C3" pin="1" pintype="passive"/>
+      <node ref="J1" pin="11" pinfunction="Pin_11" pintype="passive"/>
+      <node ref="L1" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R13" pin="1" pintype="passive"/>
+      <node ref="U1" pin="3" pinfunction="CS" pintype="input"/>
+      <node ref="U1" pin="8" pinfunction="Vin" pintype="power_in"/>
+      <node ref="U2" pin="10" pinfunction="V+" pintype="power_in"/>
+    </net>
+    <net code="2" name="GND">
+      <node ref="C1" pin="2" pintype="passive"/>
+      <node ref="C11" pin="2" pintype="passive"/>
+      <node ref="C14" pin="2" pintype="passive"/>
+      <node ref="C15" pin="2" pintype="passive"/>
+      <node ref="C16" pin="2" pintype="passive"/>
+      <node ref="C2" pin="2" pintype="passive"/>
+      <node ref="C3" pin="2" pintype="passive"/>
+      <node ref="C4" pin="2" pintype="passive"/>
+      <node ref="C5" pin="2" pintype="passive"/>
+      <node ref="C6" pin="2" pintype="passive"/>
+      <node ref="C8" pin="2" pintype="passive"/>
+      <node ref="C9" pin="2" pintype="passive"/>
+      <node ref="J1" pin="10" pinfunction="Pin_10" pintype="passive"/>
+      <node ref="J1" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="Q1" pin="3" pinfunction="S" pintype="passive"/>
+      <node ref="R1" pin="2" pintype="passive"/>
+      <node ref="R14" pin="2" pintype="passive"/>
+      <node ref="R16" pin="2" pintype="passive"/>
+      <node ref="R23" pin="2" pintype="passive"/>
+      <node ref="U1" pin="2" pinfunction="GND" pintype="power_in"/>
+      <node ref="U2" pin="4" pinfunction="V-" pintype="power_in"/>
+      <node ref="U3" pin="4" pinfunction="V-" pintype="power_in"/>
+    </net>
+    <net code="3" name="Net-(C5-Pad1)">
+      <node ref="C5" pin="1" pintype="passive"/>
+      <node ref="C7" pin="1" pintype="passive"/>
+      <node ref="R17" pin="2" pintype="passive"/>
+    </net>
+    <net code="4" name="Net-(C7-Pad2)">
+      <node ref="C7" pin="2" pintype="passive"/>
+      <node ref="R18" pin="1" pintype="passive"/>
+    </net>
+    <net code="5" name="Net-(C10-Pad1)">
+      <node ref="C10" pin="1" pintype="passive"/>
+      <node ref="R18" pin="2" pintype="passive"/>
+      <node ref="R19" pin="1" pintype="passive"/>
+      <node ref="U2" pin="2" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="6" name="Net-(C10-Pad2)">
+      <node ref="C10" pin="2" pintype="passive"/>
+      <node ref="C12" pin="1" pintype="passive"/>
+      <node ref="R19" pin="2" pintype="passive"/>
+      <node ref="U2" pin="1" pintype="output"/>
+    </net>
+    <net code="7" name="Net-(C12-Pad2)">
+      <node ref="C12" pin="2" pintype="passive"/>
+      <node ref="R20" pin="1" pintype="passive"/>
+    </net>
+    <net code="8" name="Net-(C13-Pad1)">
+      <node ref="C13" pin="1" pintype="passive"/>
+      <node ref="R20" pin="2" pintype="passive"/>
+      <node ref="R21" pin="1" pintype="passive"/>
+      <node ref="U3" pin="2" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="9" name="Net-(D1-Pad2)">
+      <node ref="D1" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="L1" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="Q1" pin="2" pinfunction="D" pintype="passive"/>
+    </net>
+    <net code="10" name="Net-(Q1-Pad1)">
+      <node ref="Q1" pin="1" pinfunction="G" pintype="input"/>
+      <node ref="U1" pin="1" pinfunction="EXT" pintype="open_emitter"/>
+    </net>
+    <net code="11" name="Net-(R1-Pad1)">
+      <node ref="R1" pin="1" pintype="passive"/>
+      <node ref="R2" pin="1" pintype="passive"/>
+      <node ref="R3" pin="1" pintype="passive"/>
+    </net>
+    <net code="12" name="Net-(R3-Pad2)">
+      <node ref="R3" pin="2" pintype="passive"/>
+      <node ref="R4" pin="1" pintype="passive"/>
+      <node ref="R5" pin="1" pintype="passive"/>
+    </net>
+    <net code="13" name="Net-(R5-Pad2)">
+      <node ref="R5" pin="2" pintype="passive"/>
+      <node ref="R6" pin="1" pintype="passive"/>
+      <node ref="R7" pin="1" pintype="passive"/>
+    </net>
+    <net code="14" name="Net-(R7-Pad2)">
+      <node ref="R7" pin="2" pintype="passive"/>
+      <node ref="R8" pin="1" pintype="passive"/>
+      <node ref="R9" pin="1" pintype="passive"/>
+    </net>
+    <net code="15" name="Net-(R10-Pad1)">
+      <node ref="R10" pin="1" pintype="passive"/>
+      <node ref="R11" pin="1" pintype="passive"/>
+      <node ref="R9" pin="2" pintype="passive"/>
+    </net>
+    <net code="16" name="Net-(R11-Pad2)">
+      <node ref="R11" pin="2" pintype="passive"/>
+      <node ref="R12" pin="1" pintype="passive"/>
+      <node ref="R17" pin="1" pintype="passive"/>
+    </net>
+    <net code="17" name="Net-(R15-Pad2)">
+      <node ref="R15" pin="2" pintype="passive"/>
+      <node ref="R16" pin="1" pintype="passive"/>
+      <node ref="U1" pin="4" pinfunction="FB" pintype="input"/>
+    </net>
+    <net code="18" name="V_piezo_drive">
+      <node ref="C11" pin="1" pintype="passive"/>
+      <node ref="C14" pin="1" pintype="passive"/>
+      <node ref="C6" pin="1" pintype="passive"/>
+      <node ref="C8" pin="1" pintype="passive"/>
+      <node ref="C9" pin="1" pintype="passive"/>
+      <node ref="D1" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="R15" pin="1" pintype="passive"/>
+      <node ref="R22" pin="1" pintype="passive"/>
+      <node ref="U3" pin="5" pinfunction="V+" pintype="power_in"/>
+    </net>
+    <net code="19" name="dac_in_1_lsb">
+      <node ref="J1" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="R2" pin="2" pintype="passive"/>
+    </net>
+    <net code="20" name="dac_in_2">
+      <node ref="J1" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="R4" pin="2" pintype="passive"/>
+    </net>
+    <net code="21" name="dac_in_3">
+      <node ref="J1" pin="5" pinfunction="Pin_5" pintype="passive"/>
+      <node ref="R6" pin="2" pintype="passive"/>
+    </net>
+    <net code="22" name="dac_in_4">
+      <node ref="J1" pin="6" pinfunction="Pin_6" pintype="passive"/>
+      <node ref="R8" pin="2" pintype="passive"/>
+    </net>
+    <net code="23" name="dac_in_5">
+      <node ref="J1" pin="7" pinfunction="Pin_7" pintype="passive"/>
+      <node ref="R10" pin="2" pintype="passive"/>
+    </net>
+    <net code="24" name="dac_in_6_msb">
+      <node ref="J1" pin="8" pinfunction="Pin_8" pintype="passive"/>
+      <node ref="R12" pin="2" pintype="passive"/>
+    </net>
+    <net code="25" name="enable_piezo_driver">
+      <node ref="J1" pin="9" pinfunction="Pin_9" pintype="passive"/>
+      <node ref="U1" pin="5" pinfunction="~{SHDN}" pintype="input"/>
+      <node ref="U2" pin="5" pinfunction="SHDN" pintype="input"/>
+    </net>
+    <net code="26" name="piezo_out">
+      <node ref="C13" pin="2" pintype="passive"/>
+      <node ref="J1" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="R21" pin="2" pintype="passive"/>
+      <node ref="U3" pin="6" pintype="output"/>
+    </net>
+    <net code="27" name="unconnected-(U1-Pad6)">
+      <node ref="U1" pin="6" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="28" name="unconnected-(U1-Pad7)">
+      <node ref="U1" pin="7" pinfunction="PG" pintype="output"/>
+    </net>
+    <net code="29" name="unconnected-(U3-Pad7)">
+      <node ref="U3" pin="7" pinfunction="Flag" pintype="input"/>
+    </net>
+    <net code="30" name="vref_power_opa">
+      <node ref="C15" pin="1" pintype="passive"/>
+      <node ref="R22" pin="2" pintype="passive"/>
+      <node ref="R23" pin="1" pintype="passive"/>
+      <node ref="U3" pin="1" pinfunction="+" pintype="input"/>
+    </net>
+    <net code="31" name="vref_preamp">
+      <node ref="C4" pin="1" pintype="passive"/>
+      <node ref="R13" pin="2" pintype="passive"/>
+      <node ref="R14" pin="1" pintype="passive"/>
+      <node ref="U2" pin="3" pinfunction="+" pintype="input"/>
+    </net>
+  </nets>
+</export>

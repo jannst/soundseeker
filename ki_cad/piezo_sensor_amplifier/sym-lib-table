@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name "soundseeker")(type "KiCad")(uri "/home/metro/git/soundseeker/ki_cad/soundseeker/soundseeker.kicad_sym")(options "")(descr ""))
+  (lib (name "piezo_preamp")(type "KiCad")(uri "/home/metro/git/soundseeker/ki_cad/soundseeker/piezo_preamp.kicad_sym")(options "")(descr ""))
+)

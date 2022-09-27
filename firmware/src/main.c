@@ -77,7 +77,34 @@ int main(void)
   stdio_init_all();
   sine_generator_init();
 
-  signal_freq_ocillator_demo();
+  //signal_freq_ocillator_demo();
+
+  uint freq = 40000;
+  bool change = true;
+
+  while(true) {
+    //sine_play_pulses(0.2, freq, 2);
+    //if(change) {
+    sine_play_pulses(0.3, freq, 3);
+    time_us_64();
+      //change = false;
+    //}
+    sleep_us(10000);
+    /*
+    int c = 0;//getchar();
+    if(c) {
+      if(c == 119) {
+        freq += 20;
+      }
+      if(c == 115) {
+        freq -= 20;
+      }
+      change = true;
+      printf("new freq: %d\n", freq);
+    }
+    */
+  }
+
   //signal_amplitude_ocillator_demo();
 
   while (1)
