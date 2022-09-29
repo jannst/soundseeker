@@ -85,7 +85,7 @@ int main(void)
   while(true) {
     //sine_play_pulses(0.2, freq, 2);
     //if(change) {
-    sine_play_pulses(0.3, freq, 3);
+    sine_play_pulses(0.5, freq, 3);
     time_us_64();
       //change = false;
     //}
