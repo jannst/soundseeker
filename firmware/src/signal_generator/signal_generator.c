@@ -41,6 +41,7 @@ void sine_generator_init()
     r2r_program_offset = pio_add_program(signal_pio, &r2r_ladder_program);
     signal_sm = pio_claim_unused_sm(signal_pio, true);
 
+
     // Setup DMA
     dma_channel = dma_claim_unused_channel(true);
     dma_channel_config dma_config = dma_channel_get_default_config(dma_channel);
@@ -57,6 +58,9 @@ void sine_generator_init()
     irq_set_exclusive_handler(DMA_IRQ_0, sine_dma_handler);
     dma_channel_set_irq0_enabled(dma_channel, true);
     irq_set_enabled(DMA_IRQ_0, true);
+
+    //r2r_ladder_program_init(signal_pio, signal_sm, r2r_program_offset, SIGNAL_OUT_PIN_BASE, DAC_NUM_BITS, SINE_NUM_SAMPLES, 40000);
+    //pio_sm_put_blocking(signal_pio, signal_sm, 0xFFFFFFFF);
 }
 
 

@@ -1,4 +1,5 @@
 #include "signal_generator/signal_generator.h"
+#include "soundseeker.h"
 
 void signal_amplitude_ocillator_demo()
 {
@@ -77,6 +78,15 @@ int main(void)
   stdio_init_all();
   sine_generator_init();
 
+  gpio_init(ENABLE_PIEZO_DRIVER_PIN);
+  gpio_init(ENABLE_ANALOG_POWER_SUPPLY_PIN);
+
+  gpio_set_dir(ENABLE_PIEZO_DRIVER_PIN, GPIO_OUT);
+  gpio_set_dir(ENABLE_ANALOG_POWER_SUPPLY_PIN, GPIO_OUT);
+
+  gpio_put(ENABLE_PIEZO_DRIVER_PIN, 0);
+  gpio_put(ENABLE_ANALOG_POWER_SUPPLY_PIN, 1);
+
   //signal_freq_ocillator_demo();
 
   uint freq = 40000;
@@ -85,7 +95,7 @@ int main(void)
   while(true) {
     //sine_play_pulses(0.2, freq, 2);
     //if(change) {
-    sine_play_pulses(0.5, freq, 3);
+    sine_play_pulses(.1, freq, 3);
     time_us_64();
       //change = false;
     //}
