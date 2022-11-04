@@ -28,6 +28,7 @@ target_link_libraries(firmware_pico PRIVATE
     pico_stdlib 
     hardware_dma
     hardware_pio
+    hardware_spi
     )
 
 # used like this in nand programmer

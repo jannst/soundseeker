@@ -1,5 +1,6 @@
 #include "signal_generator/signal_generator.h"
 #include "soundseeker.h"
+#include "hardware/spi.h"
 
 void signal_amplitude_ocillator_demo()
 {
@@ -73,6 +74,54 @@ void signal_freq_ocillator_demo()
   }
 }
 
+#define ADC_BUF_LEN 64000
+uint16_t adc_buf[ADC_BUF_LEN];
+uint dma_rx;
+uint dma_tx;
+uint timer;
+dma_channel_config c;
+uint16_t write_val = 0;
+void sample_adc()
+{
+
+    if (dma_channel_is_busy(dma_rx)) {
+        printf("fuck...\n");
+        return;
+    }
+
+    printf("Configure TX DMA\n");
+
+    dma_channel_config c = dma_channel_get_default_config(dma_tx);
+    channel_config_set_transfer_data_size(&c, DMA_SIZE_16);
+    //channel_config_set_dreq(&c, spi_get_dreq(spi_default, true));
+    channel_config_set_dreq(&c, dma_get_timer_dreq(timer));
+    channel_config_set_read_increment(&c, false);
+    channel_config_set_write_increment(&c, false);
+    dma_channel_configure(dma_tx, &c,
+                          &spi_get_hw(spi_default)->dr, // write address
+                          &write_val, // read address
+                          ADC_BUF_LEN, // element count (each element is of size transfer_data_size)
+                          false); // don't start yet
+
+    printf("Configure RX DMA\n");
+
+  c = dma_channel_get_default_config(dma_rx);
+  channel_config_set_transfer_data_size(&c, DMA_SIZE_16);
+  channel_config_set_dreq(&c, spi_get_dreq(ADC_SPI, false));
+  // do not increment pointer pointing to SPI data register
+  channel_config_set_read_increment(&c, false);
+  // but update the pointer pointing to the buffer
+  channel_config_set_write_increment(&c, true);
+  dma_channel_configure(dma_rx, &c,
+                        adc_buf,                  // write address
+                        &spi_get_hw(ADC_SPI)->dr, // read address
+                        ADC_BUF_LEN,              // element count (each element is of size transfer_data_size)
+                        false);                   // don't start yet
+
+  // start ADC sampling
+  dma_start_channel_mask((1u << dma_rx) | (1u << dma_tx));
+}
+
 int main(void)
 {
   stdio_init_all();
@@ -87,17 +136,18 @@ int main(void)
   gpio_put(ENABLE_PIEZO_DRIVER_PIN, 0);
   gpio_put(ENABLE_ANALOG_POWER_SUPPLY_PIN, 1);
 
-  //signal_freq_ocillator_demo();
+  // signal_freq_ocillator_demo();
 
   uint freq = 40000;
   bool change = true;
 
-  while(true) {
-    //sine_play_pulses(0.2, freq, 2);
-    //if(change) {
+  while (false)
+  {
+    // sine_play_pulses(0.2, freq, 2);
+    // if(change) {
     sine_play_pulses(.1, freq, 3);
     time_us_64();
-      //change = false;
+    // change = false;
     //}
     sleep_us(10000);
     /*
@@ -115,7 +165,42 @@ int main(void)
     */
   }
 
-  //signal_amplitude_ocillator_demo();
+  printf("SPI flash example\n");
+
+  // Enable SPI 0 at 1 MHz and connect to GPIOs
+  spi_init(ADC_SPI, 32 * 1000 * 1000);
+  spi_set_format(spi_default, 16, SPI_CPOL_1, SPI_CPHA_1, SPI_MSB_FIRST);
+
+  gpio_set_function(ADC_SPI_RX_PIN, GPIO_FUNC_SPI);
+  gpio_set_function(ADC_SPI_SCK_PIN, GPIO_FUNC_SPI);
+  gpio_set_function(ADC_SPI_CSN_PIN, GPIO_FUNC_SPI);
+  // gpio_set_function(ADC_SPI_TX_PIN, GPIO_FUNC_SPI);
+
+  // setup SPI DMA
+  dma_rx = dma_claim_unused_channel(true);
+  dma_tx = dma_claim_unused_channel(true);
+
+
+  uint timer = dma_claim_unused_timer(true);
+  dma_timer_set_fraction(timer, 1, 125);
+  // We set the inbound DMA to transfer from the SPI receive FIFO to a memory buffer paced by the SPI RX FIFO DREQ
+  // We configure the read address to remain unchanged for each element, but the write
+  // address to increment (so data is written throughout the buffer)
+
+  printf("SPI initialised, let's goooooo\n");
+
+  
+  while(true) {
+    //spi_read16_blocking(ADC_SPI, 0, adc_buf, 1);
+    //printf("adc val: %d\n", adc_buf[0]>>7);
+    sample_adc();
+    sleep_ms(1000);
+  }
+  
+
+  // spi_read_blocking(spi, 0, buf, len);
+
+  // signal_amplitude_ocillator_demo();
 
   while (1)
     tight_loop_contents();
