@@ -9,10 +9,15 @@
  **/
 void generate_sine_lookup_table(double amplitude)
 {
+    uint8_t amplitude_dac = amplitude * (USED_DAC_RESOLUTION / 2);
     for (uint16_t i = 0; i < SINE_NUM_SAMPLES; i++)
     {
-        sine_lookup_table[i] = (uint8_t)(sin(2 * i * M_PI / SINE_NUM_SAMPLES) * amplitude * (USED_DAC_RESOLUTION / 2) + (DAC_RESOLUTION / 2) - 1);
+        // substract M_PI/2 to start a 0
+        sine_lookup_table[i] = (uint8_t)(sin((2 * i * M_PI / SINE_NUM_SAMPLES) - M_PI/2) * amplitude_dac + amplitude_dac);
     }
+    //printf("DATA");
+    //uart_write_blocking (uart0, (uint8_t*)&sine_lookup_table[0], SINE_NUM_SAMPLES);
+    //printf("ENDE");
 }
 
 

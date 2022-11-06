@@ -1,6 +1,7 @@
 #include "signal_generator/signal_generator.h"
 #include "soundseeker.h"
 #include "hardware/spi.h"
+#include <string.h>
 
 void signal_amplitude_ocillator_demo()
 {
@@ -74,7 +75,7 @@ void signal_freq_ocillator_demo()
   }
 }
 
-#define ADC_BUF_LEN 64000
+#define ADC_BUF_LEN 3000
 uint16_t adc_buf[ADC_BUF_LEN];
 uint dma_rx;
 uint dma_tx;
@@ -83,17 +84,12 @@ dma_channel_config c;
 uint16_t write_val = 0;
 void sample_adc()
 {
-
-    if (dma_channel_is_busy(dma_rx)) {
-        printf("fuck...\n");
+    if (dma_channel_is_busy(dma_rx) || dma_channel_is_busy(dma_tx)) {
         return;
     }
 
-    printf("Configure TX DMA\n");
-
     dma_channel_config c = dma_channel_get_default_config(dma_tx);
     channel_config_set_transfer_data_size(&c, DMA_SIZE_16);
-    //channel_config_set_dreq(&c, spi_get_dreq(spi_default, true));
     channel_config_set_dreq(&c, dma_get_timer_dreq(timer));
     channel_config_set_read_increment(&c, false);
     channel_config_set_write_increment(&c, false);
@@ -102,8 +98,6 @@ void sample_adc()
                           &write_val, // read address
                           ADC_BUF_LEN, // element count (each element is of size transfer_data_size)
                           false); // don't start yet
-
-    printf("Configure RX DMA\n");
 
   c = dma_channel_get_default_config(dma_rx);
   channel_config_set_transfer_data_size(&c, DMA_SIZE_16);
@@ -141,31 +135,9 @@ int main(void)
   uint freq = 40000;
   bool change = true;
 
-  while (false)
-  {
-    // sine_play_pulses(0.2, freq, 2);
-    // if(change) {
-    sine_play_pulses(.1, freq, 3);
-    time_us_64();
-    // change = false;
-    //}
-    sleep_us(10000);
-    /*
-    int c = 0;//getchar();
-    if(c) {
-      if(c == 119) {
-        freq += 20;
-      }
-      if(c == 115) {
-        freq -= 20;
-      }
-      change = true;
-      printf("new freq: %d\n", freq);
-    }
-    */
-  }
 
-  printf("SPI flash example\n");
+  const char* EOL = "ENDE";
+  const char* START = "DATA";
 
   // Enable SPI 0 at 1 MHz and connect to GPIOs
   spi_init(ADC_SPI, 32 * 1000 * 1000);
@@ -187,20 +159,30 @@ int main(void)
   // We configure the read address to remain unchanged for each element, but the write
   // address to increment (so data is written throughout the buffer)
 
-  printf("SPI initialised, let's goooooo\n");
-
   
+    //sine_play_pulses(1, freq, 3);
+    //sine_play_pulses(1, freq, 3);
+    //sine_play(1, freq);
   while(true) {
-    //spi_read16_blocking(ADC_SPI, 0, adc_buf, 1);
-    //printf("adc val: %d\n", adc_buf[0]>>7);
+    sine_play_pulses(.1, freq, 30);
     sample_adc();
-    sleep_ms(1000);
+    sleep_ms(500);
+    uint16_t *wordPtr = adc_buf;
+    uint8_t *bytePtr = (uint8_t *)adc_buf;
+    for (uint i = 0; i < ADC_BUF_LEN; i++)
+    {
+      // shift 7 bits because of ADC data format (see data sheet for MAX1115 ADC)
+      if((*wordPtr >> 7) < 10) {
+        printf("oh oh :(\n");
+      }
+      *bytePtr = (uint8_t)(*wordPtr >> 7);
+      bytePtr++;
+      wordPtr++;
+    }
+    //printf(START);
+    //uart_write_blocking (uart0, (uint8_t*)&adc_buf[0], ADC_BUF_LEN);
+    //printf(EOL);
   }
-  
-
-  // spi_read_blocking(spi, 0, buf, len);
-
-  // signal_amplitude_ocillator_demo();
 
   while (1)
     tight_loop_contents();
