@@ -127,7 +127,7 @@ int main(void)
   gpio_set_dir(ENABLE_PIEZO_DRIVER_PIN, GPIO_OUT);
   gpio_set_dir(ENABLE_ANALOG_POWER_SUPPLY_PIN, GPIO_OUT);
 
-  gpio_put(ENABLE_PIEZO_DRIVER_PIN, 0);
+  gpio_put(ENABLE_PIEZO_DRIVER_PIN, 1);
   gpio_put(ENABLE_ANALOG_POWER_SUPPLY_PIN, 1);
 
   // signal_freq_ocillator_demo();
@@ -164,24 +164,24 @@ int main(void)
     //sine_play_pulses(1, freq, 3);
     //sine_play(1, freq);
   while(true) {
-    sine_play_pulses(.1, freq, 30);
+    sine_play_pulses(.7, freq, 3);
     sample_adc();
-    sleep_ms(500);
+    sleep_ms(300);
     uint16_t *wordPtr = adc_buf;
     uint8_t *bytePtr = (uint8_t *)adc_buf;
     for (uint i = 0; i < ADC_BUF_LEN; i++)
     {
       // shift 7 bits because of ADC data format (see data sheet for MAX1115 ADC)
-      if((*wordPtr >> 7) < 10) {
-        printf("oh oh :(\n");
-      }
+      //if((*wordPtr >> 7) < 10) {
+      //  printf("oh oh :(\n");
+      //}
       *bytePtr = (uint8_t)(*wordPtr >> 7);
       bytePtr++;
       wordPtr++;
     }
-    //printf(START);
-    //uart_write_blocking (uart0, (uint8_t*)&adc_buf[0], ADC_BUF_LEN);
-    //printf(EOL);
+    printf(START);
+    uart_write_blocking (uart0, (uint8_t*)&adc_buf[0], ADC_BUF_LEN);
+    printf(EOL);
   }
 
   while (1)
