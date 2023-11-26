@@ -5,8 +5,8 @@ This Repository contains only the source code for the third prototype.
 
 ## Prototype I (2017)
 <div style="display: flex">
-<img src="docs/static/img/prototype_1/prototype_1_use_case.jpg" width="50%">
-<img src="docs/static/img/prototype_1/prototype_1_inside.jpg" width="50%">
+<img src="docs/static/img/prototype_1/prototype_1_use_case.jpg" width="45%">
+<img src="docs/static/img/prototype_1/prototype_1_inside.jpg" width="45%">
 </div>
 The first prototype used an ATMEAGA-8 as MCU and a Haribo sweets box as enclosure. 
 
